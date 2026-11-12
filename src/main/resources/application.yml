@@ -1,21 +1,34 @@
 server:
-  port: 8085
+  port: 8089
 
 spring:
   application:
     name: smartgn-admin
+  config:
+    import: ${SPRING_CONFIG_IMPORT:optional:configserver:http://localhost:8088}
   boot:
     admin:
       ui:
         title: SmartGN - Admin Server
       client:
-        url: http://localhost:8085
+        url: http://localhost:8089
+        username: ${SMARTGN_ADMIN_USERNAME:admin}
+        password: ${SMARTGN_ADMIN_PASSWORD:local-admin-password}
+        instance:
+          service-url: ${ADMIN_SERVICE_URL:http://localhost:8089}
+          management-url: ${ADMIN_MANAGEMENT_URL:http://localhost:8089/actuator}
+          health-url: ${ADMIN_HEALTH_URL:http://localhost:8089/actuator/health}
+
+  security:
+    user:
+      name: ${SMARTGN_ADMIN_USERNAME:admin}
+      password: ${SMARTGN_ADMIN_PASSWORD:local-admin-password}
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*"
+        include: health,info
   endpoint:
     health:
       show-details: always

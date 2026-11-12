@@ -1,0 +1,14 @@
+name: smartgn-admin
+services:
+  admin:
+    build: .
+    ports: ["127.0.0.1:8089:8089"]
+    environment:
+      SERVER_PORT: 8089
+      SPRING_BOOT_ADMIN_CLIENT_URL: http://localhost:8089
+      SPRING_BOOT_ADMIN_CLIENT_USERNAME: ${SMARTGN_ADMIN_USERNAME:-admin}
+      SPRING_BOOT_ADMIN_CLIENT_PASSWORD: ${SMARTGN_ADMIN_PASSWORD:-local-admin-password}
+      SMARTGN_ADMIN_USERNAME: ${SMARTGN_ADMIN_USERNAME:-admin}
+      SMARTGN_ADMIN_PASSWORD: ${SMARTGN_ADMIN_PASSWORD:-local-admin-password}
+    mem_limit: 384m
+    init: true
