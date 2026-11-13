@@ -1,0 +1,22 @@
+{
+  "service": "smartgn-admin",
+  "version": 1,
+  "records": [
+    {
+      "alias": "demo-admin-instances",
+      "services": [
+        "iam",
+        "installation",
+        "support",
+        "billing",
+        "alerting",
+        "telemetry",
+        "monitoring",
+        "message-broker",
+        "config",
+        "admin",
+        "api-gateway"
+      ]
+    }
+  ]
+}
