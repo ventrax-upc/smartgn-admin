@@ -1,0 +1,7 @@
+# Derived from the AV4 integrated-local scope and the Gateway smoke assertions.
+Feature: Integrated service health in SmartGN Admin
+
+  Scenario: List healthy registered services
+    Given the integrated SmartGN services have started with Admin registration enabled
+    When an authenticated operator opens SmartGN Admin
+    Then the integrated services are registered and their health status is UP
