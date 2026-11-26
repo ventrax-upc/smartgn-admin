@@ -4,9 +4,11 @@
 
 Provides the operational dashboard for registered services and polls their health endpoints. The dashboard requires the configured local credentials.
 
-**Stack**  Java 21, Spring Boot Admin.
+**Stack**  Java 25, Spring Boot Admin.
 
 ## Run locally
+
+The [integrated startup guide](https://github.com/ventrax-upc/smartgn-api-gateway/blob/develop/README.md#start-all-13-repositories-locally) covers all 13 repositories. The commands below describe this component.
 
 Requirements are Docker Desktop with the Linux engine and PowerShell 7. Keep the SmartGN repositories as siblings for the integrated stack.
 
@@ -44,6 +46,10 @@ Run the integrated smoke from the Gateway repository to verify cross-service wor
 ## Documentation
 
 - [Local development](docs/local-development.md)
+
+## Acceptance scenarios
+
+See the [Gherkin acceptance scenarios](docs/acceptance/scenarios.gherkin). These are acceptance specifications. Use the verification commands above to run the automated checks.
 
 ## License
 
